@@ -1,8 +1,10 @@
 # CME-Speed-Forbush-Reduction-Analysis
 This repository includes the following:
-- All data utilized
+- All raw data utilized
 - All data manipulation programs
 - Results including: Graphs, Correlation Coefficient, Error, and Fractional Error
+
+Only a small portion of the sorted coronal mass ejection data is provided. Use scripts/cleaner.py to generate the rest.
 
 Data From:
 Nasa CDAW Database
