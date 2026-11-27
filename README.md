@@ -1,10 +1,22 @@
-# CME Speed and Forbush Reduction
+# CME Speed and Forbush Decreases
 
-## Overview
-
-I compared coronal mass ejection (CME) speeds with the drop in neutron-monitor counts around each event. I wanted to see how strongly faster CMEs were associated with larger Forbush reductions.
+This project explores whether the speed of a coronal mass ejection (CME) is related to the size of the temporary decrease in cosmic-ray intensity observed near Earth, known as a Forbush decrease. I compared CME speeds with changes in neutron monitor counts.
 
 This repository contains the data I used, the data-manipulation programs, and the saved graphs and console output from the analysis.
+
+## Existing Results
+
+The saved [console output](output.txt) reports a correlation coefficient of **r = 0.27** across **948 matched entries**, indicating a weak positive association between CME speed (km/s) and the reduction in neutron monitor counts (%). This association alone does not establish causation.
+
+![CME speed plotted against Forbush reduction, with a fitted line.](graphs/all_speed_vs_forbush.png)
+
+*The saved scatter plot compares CME speed with the percentage reduction in neutron-monitor counts.*
+
+![Saved CME speed versus Forbush reduction comparison for the stronger-event selection.](graphs/strong_speed_vs_forbush.png)
+
+*This second saved figure shows the stronger-event comparison. The event-selection threshold is set in `main.py`.*
+
+The saved figures and log reflect the selections used when they were generated; the checked-in `main.py` currently filters reductions below 1% or above 99.9%. The saved log includes reductions below 1%, so its correlation should not be read as the result of the current filter.
 
 ## Methodology
 
@@ -16,18 +28,6 @@ The workflow pairs CME data from NASA's SOHO/LASCO catalogue with neutron counts
 - `main.py` matches the event dates to CME speeds, applies its reduction filter, fits a line, and calculates the correlation coefficient and count-based error estimates.
 
 Only a portion of the event-window CSVs is included. The raw source files and the cleaning script are available for generating the remaining windows.
-
-## Existing Results
-
-![CME speed plotted against Forbush reduction, with a fitted line.](graphs/all_speed_vs_forbush.png)
-
-*The saved scatter plot compares CME speed with the percentage reduction in neutron-monitor counts.*
-
-![Saved CME speed versus Forbush reduction comparison for the stronger-event selection.](graphs/strong_speed_vs_forbush.png)
-
-*This second saved figure shows the stronger-event comparison. The event-selection threshold is set in `main.py`.*
-
-[output.txt](output.txt) contains saved console output from an earlier run, including event counts and a correlation coefficient. The saved figures and log reflect the selections used when they were generated; the checked-in `main.py` currently filters reductions below 1% or above 99.9%.
 
 ## Repository Structure
 
